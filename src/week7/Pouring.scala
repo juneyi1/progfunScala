@@ -30,4 +30,11 @@ class Pouring(capacity: Vector[Int]) { // capacity for each glass
     (for (g <- glasses) yield Fill(g)) ++
     (for (from <- glasses; to <- glasses if from != to) yield Pour(from, to))
   }
+  
+// Paths
+  class Path(history: List[Move]) { //last move comes first in history
+    def endState: State = trackState(history)
+    
+  } 
+  
 }
